@@ -1,17 +1,25 @@
-x96 mini h313
-Prerequirements
-1. Linux PC
-2. Android Platform-tool for adb/fastboot 
-   Just use apt-get command to install
+# x96 mini h313 chipset
+This is steps for X96 mini h313 chipset 2g/16g. 
+
+## Requirements
+
+Before you start, you need:
+
+1. Linux PC (Windows may work but not tested and there is a reported that windows failed fastboot boot command)
+2. Android Platform-tool for `adb`/`fastboot` and installed in your Linux PC.
 3. USB-A to USB-A cable for fastboot
 4. Keyboard and Mouse
+5. Magisk App (I use 24.3)
+6. Magisk safetynet fix module
+7. 
 
-
+---
+## Steps
+### Install Magisk App
 1. Connect Kyeboard/Mouse and boot. Then connect to wifi (or ethernet)
 2. Configure static IP address in your router if possible
-3. Install Magisk App (24.3) by
-Example your device is 192.168.1.129
-
+3. Install Magisk App (24.3) (Example your device IP is 192.168.1.129)
+```
 adb connect 192.168.1.129
 * daemon not running; starting now at tcp:5037
 * daemon started successfully
@@ -21,30 +29,33 @@ adb install Magisk-v24.3.apk
 Success
 
 adb reboot
-
-connect after reboot
+```
+### Extract boot.img and vbmeta.img
+connect again after reboot
+```
 adb connect 192.168.1.129
 connected to 192.168.1.129:5555
-
-extract boot.img by
-
+```
+4. extract boot.img
+```
 adb shell "echo 'dd if=/dev/block/by-name/boot of=/sdcard/Download/boot.img' | su"
 65536+0 records in
 65536+0 records out
 33554432 bytes (32 M) copied, 0.749928 s, 43 M/s
-
-extract vbmeta.img by
+```
+5. extract vbmeta.img
+```
 adb shell "echo 'dd if=/dev/block/by-name/vbmeta of=/sdcard/Download/vbmeta.img' | su"
 32768+0 records in
 32768+0 records out
 16777216 bytes (16 M) copied, 0.386947 s, 41 M/s
-
-Patch boot.img by 
-1. Open Magisk App
-2. Install
-3. Go to Download folder and select(double click) boot.img
-4. Let's go
-5. you will get like this
+```
+### Patch boot.img 
+8. Open Magisk App
+9. Go to Install
+10. Go to Download folder and select(double click) boot.img
+11. Let's go
+12. you will get like this
 
 Pull patched boot.img to your PC (Linux) by
 adb pull /sdcard/Download/magisk_patched-24300_xxxxx.img
