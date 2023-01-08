@@ -20,9 +20,9 @@ This is for X96 Mini / MXQ S905W Chip Configuration
 9. Reboot
 10. Connect to device and Grant superuser access when pop up on display.
 ```
-mizu@rdm:~/Atlas$ adb connect 192.168.1.201
+user@linuxpc:~/Atlas$ adb connect 192.168.1.201
 connected to 192.168.1.201:5555
-mizu@rdm:~/Atlas$ adb -s 192.168.1.201 shell
+user@linuxpc:~/Atlas$ adb -s 192.168.1.201 shell
 atvX:/ $ su (after this superuser request should pop up)
 atvX:/ #
 ```
