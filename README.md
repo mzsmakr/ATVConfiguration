@@ -1,2 +1,2 @@
 # ATV configuration
-Rooting Procedure for ATVs to pass saftynet
+Rooting Procedure for ATVs to pass safetynet
