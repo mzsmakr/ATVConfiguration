@@ -173,5 +173,5 @@ atlas_config.json: 1 file pushed. 0.0 MB/s (182 bytes in 0.039s)
 Done!
 
 ## Reference
-1. [Magisk Installation](https://github.com/topjohnwu/Magisk/blob/master/docs/install.md).
+1. Magisk installation with fastboot steps are based on [https://github.com/topjohnwu/Magisk/blob/master/docs/install.md](https://github.com/topjohnwu/Magisk/blob/master/docs/install.md).
 2. 
