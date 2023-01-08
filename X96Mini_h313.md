@@ -9,8 +9,9 @@ Before you start, you need:
 - Android Platform-tool for `adb`/`fastboot` and installed in your Linux PC.
 - USB-A to USB-A cable for fastboot
 - Keyboard and Mouse
-- Magisk App (I use 24.3)
-- Magisk safetynet fix module ()
+- Magisk App apk.(I use [Magisk-v24.3.apk](https://github.com/topjohnwu/Magisk/releases/tag/v24.3))
+- Magisk safetynet fix module. (I use [safetynet-fix-v2.3.1.zip](https://github.com/kdrag0n/safetynet-fix/releases/tag/v2.3.1))
+- Optional. YASNAC (short for Yet Another SafetyNet Attestation Checker). (I use [yasnac-v1.1.5.r65.15110ef310-release.apk](https://github.com/RikkaW/YASNAC/releases/tag/v1.1.5))
 
 
 ---
@@ -20,32 +21,32 @@ Before you start, you need:
 2. Configure static IP address in your router if possible
 3. Install Magisk App (24.3) (Example your device IP is 192.168.1.129)
 ```
-adb connect 192.168.1.129
+user@linuxpc:~/Atlas$ adb connect 192.168.1.129
 * daemon not running; starting now at tcp:5037
 * daemon started successfully
 connected to 192.168.1.129:5555
 
-adb install Magisk-v24.3.apk
+user@linuxpc:~/Atlas$ adb -s 192.168.1.129 install Magisk-v24.3.apk
 Success
 
-adb reboot
+user@linuxpc:~/Atlas$ adb -s 192.168.1.129 reboot
 ```
 ### Extract boot.img and vbmeta.img
 connect again after reboot
 ```
-adb connect 192.168.1.129
+user@linuxpc:~/Atlas$ adb connect 192.168.1.129
 connected to 192.168.1.129:5555
 ```
 4. Extract boot.img in `/dev/block/by-name/` and copy to `/sdcard/Download/boot.img`
 ```
-adb shell "echo 'dd if=/dev/block/by-name/boot of=/sdcard/Download/boot.img' | su"
+user@linuxpc:~/Atlas$ adb -s 192.168.1.129 shell "echo 'dd if=/dev/block/by-name/boot of=/sdcard/Download/boot.img' | su"
 65536+0 records in
 65536+0 records out
 33554432 bytes (32 M) copied, 0.749928 s, 43 M/s
 ```
 5. Extract vbmeta.img in `/dev/block/by-name/` and copy to `/sdcard/Download/vbmeta.img`
 ```
-adb shell "echo 'dd if=/dev/block/by-name/vbmeta of=/sdcard/Download/vbmeta.img' | su"
+user@linuxpc:~/Atlas$ adb -s 192.168.1.129 shell "echo 'dd if=/dev/block/by-name/vbmeta of=/sdcard/Download/vbmeta.img' | su"
 32768+0 records in
 32768+0 records out
 16777216 bytes (16 M) copied, 0.386947 s, 41 M/s
@@ -74,31 +75,31 @@ Output file is written to
 
 5. Go to Linux terminal. Copy patched image `magisk_patched-24300_xxxxx.img` and `vbmeta.img` to Linux PC
 ```
-adb pull /sdcard/Download/magisk_patched-24300_xxxxx.img
-adb pull /sdcard/Download/vbmeta.img
+user@linuxpc:~/Atlas$ adb -s 192.168.1.129 pull /sdcard/Download/magisk_patched-24300_xxxxx.img
+user@linuxpc:~/Atlas$ adb -s 192.168.1.129 pull /sdcard/Download/vbmeta.img
 ```
 6. Connect to ATV device. Remove `su` binary from /system/xbin/ before fastboot by
 ```
-adb -s 192.168.1.129 shell
-su
-mount -o rw,remount /
-rm /system/xbin/su
+user@linuxpc:~/Atlas$ adb -s 192.168.1.129 shell
+eros-p1:/ $ su
+eros-p1:/ # mount -o rw,remount /
+eros-p1:/ # rm /system/xbin/su
 ```
 7. Connect USB to most left port and Linux USB and reboot with recovery. Most left port is USB-USB, right USB connect keyboard and no Mouse connected. You will need to use Keyboard to get to Fastboot Mode after reboot. 
 In Linux Termianl
 ```
-adb -s 192.168.1.129 reboot recovery
+user@linuxpc:~/Atlas$ adb -s 192.168.1.129 reboot recovery
 ```
 8. Select `Enter fastboot` by Keyboard -> Select `Reboot to bootloader` by Keyboard. Then you will see Android with opening his berry.
 9. Check device connected in Linux terminal
 ```
-sudo fastboot devices
-[sudo] password for mizu:
+user@linuxpc:~/Atlas$ sudo fastboot devices
+[sudo] password for user:
 2c001474112607f1c4e     fastboot
 ```
 10. Flash patched boot.img with command:
 ```
-sudo fastboot flash boot /path-to-img/magisk_patched-24300_xxxxx.img
+user@linuxpc:~/Atlas$ sudo fastboot flash boot /path-to-img/magisk_patched-24300_xxxxx.img
 target reported max download size of 33554432 bytes
 sending 'boot' (32768 KB)...
 OKAY [  1.505s]
@@ -108,7 +109,7 @@ finished. total time: 2.110s
 ```
 11. Flash vbmeta.img with command:
 ```
-sudo fastboot --disable-verity --disable-verification flash vbmeta /path-to-img/vbmeta.img
+user@linuxpc:~/Atlas$ sudo fastboot --disable-verity --disable-verification flash vbmeta /path-to-img/vbmeta.img
 target reported max download size of 33554432 bytes
 sending 'vbmeta' (16384 KB)...
 OKAY [  0.759s]
@@ -118,7 +119,7 @@ finished. total time: 1.090s
 ```
 12. Reboot with command:
 ```
-sudo fastboot reboot
+user@linuxpc:~/Atlas$ sudo fastboot reboot
 ```
 ### Configure Magisk
 1. Remove USB-USB cable and connect Mouse back
@@ -126,8 +127,8 @@ sudo fastboot reboot
 2. If asked reboot, reboot.
 3. Grant su permission.
 ```
-adb connect 192.168.1.129
-adb -s 192.168.1.129 shell
+user@linuxpc:~/Atlas$ adb connect 192.168.1.129
+user@linuxpc:~/Atlas$ adb -s 192.168.1.129 shell
 eros-p1:/ $ su
 ```
 4. Superuser request pop up on Magisk App and Grant
@@ -136,8 +137,8 @@ eros-p1:/ $ su
 7. reboot
 8. Install magisk safetynet fix module
 ```
-adb -s 192.168.1.129 push safetynet-fix-v2.3.1.zip /data/local/tmp
-adb -s 192.168.1.129 shell
+user@linuxpc:~/Atlas$ adb -s 192.168.1.129 push safetynet-fix-v2.3.1.zip /data/local/tmp
+user@linuxpc:~/Atlas$ adb -s 192.168.1.129 shell
 eros-p1:/ $ su
 eros-p1:/ # cd /data/local/tmp/
 eros-p1:/ # magisk --install-module safetynet-fix-v2.3.1.zip
@@ -174,4 +175,3 @@ Done!
 
 ## Reference
 1. Magisk installation with fastboot steps are based on [https://github.com/topjohnwu/Magisk/blob/master/docs/install.md](https://github.com/topjohnwu/Magisk/blob/master/docs/install.md).
-2. 
