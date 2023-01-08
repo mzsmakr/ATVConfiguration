@@ -19,7 +19,7 @@ Before you start, you need:
 ### Install Magisk App
 1. Connect Kyeboard/Mouse and boot. Then connect to wifi (or ethernet)
 2. Configure static IP address in your router if possible
-3. Install Magisk App (24.3) (Example your device IP is 192.168.1.129)
+3. Install Magisk App (24.3) (Example device IP is 192.168.1.129)
 ```
 user@linuxpc:~/Atlas$ adb connect 192.168.1.129
 * daemon not running; starting now at tcp:5037
