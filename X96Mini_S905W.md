@@ -1,7 +1,13 @@
 # X96 Mini S905W / MXQ S905W Configuration
 This is for X96 Mini / MXQ S905W Chip Configuration 
 ## Requirements
-
+- USB BURNING TOOL (Amlogic_USB_Burning_Tool_v2.2.4)
+- ROM to flash
+- Mouse and Keyboad
+- USB-A to USB-A cable
+- USB Memory to install Magisk
+- Magisk safetynet fix module. (I use [safetynet-fix-v2.3.1.zip](https://github.com/kdrag0n/safetynet-fix/releases/tag/v2.3.1))
+- Optional. YASNAC (short for Yet Another SafetyNet Attestation Checker). (I use [yasnac-v1.1.5.r65.15110ef310-release.apk](https://github.com/RikkaW/YASNAC/releases/tag/v1.1.5))
 ---
 ### Steps
 1. Flash rom using USB BURNING TOOL (Amlogic_USB_Burning_Tool_v2.2.4)
