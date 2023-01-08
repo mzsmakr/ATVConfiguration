@@ -171,3 +171,7 @@ atlas_config.json: 1 file pushed. 0.0 MB/s (182 bytes in 0.039s)
 13. Activate the device at atlas dashboard
 
 Done!
+
+## Reference
+1. [Magisk Installation](https://github.com/topjohnwu/Magisk/blob/master/docs/install.md).
+2. 
