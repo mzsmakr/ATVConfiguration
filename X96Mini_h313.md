@@ -9,7 +9,7 @@ Before you start, you need:
 - Android Platform-tool for `adb`/`fastboot` and installed in your Linux PC.
 - USB-A to USB-A cable for fastboot
 - Keyboard and Mouse
-- Magisk App apk.(I use [Magisk-v24.3.apk](https://github.com/topjohnwu/Magisk/releases/tag/v24.3))
+- Magisk App apk.(I use [Magisk-v25.2.apk](https://github.com/topjohnwu/Magisk/releases/tag/v25.2))
 - Magisk safetynet fix module. (I use [safetynet-fix-v2.3.1.zip](https://github.com/kdrag0n/safetynet-fix/releases/tag/v2.3.1))
 - Optional. YASNAC (short for Yet Another SafetyNet Attestation Checker). (I use [yasnac-v1.1.5.r65.15110ef310-release.apk](https://github.com/RikkaW/YASNAC/releases/tag/v1.1.5))
 
@@ -26,7 +26,7 @@ user@linuxpc:~/Atlas$ adb connect 192.168.1.129
 * daemon started successfully
 connected to 192.168.1.129:5555
 
-user@linuxpc:~/Atlas$ adb -s 192.168.1.129 install Magisk-v24.3.apk
+user@linuxpc:~/Atlas$ adb -s 192.168.1.129 install Magisk-v25.2.apk
 Success
 
 user@linuxpc:~/Atlas$ adb -s 192.168.1.129 reboot
@@ -73,13 +73,14 @@ Output file is written to
 - All done!
 ```
 
-5. Go to Linux terminal. Copy patched image `magisk_patched-24300_xxxxx.img` and `vbmeta.img` to Linux PC
+5. Go to Linux terminal. Copy patched image `magisk_patched-25200_xxxxx.img` and `vbmeta.img` to Linux PC
 ```
-user@linuxpc:~/Atlas$ adb -s 192.168.1.129 pull /sdcard/Download/magisk_patched-24300_xxxxx.img
+user@linuxpc:~/Atlas$ adb -s 192.168.1.129 pull /sdcard/Download/magisk_patched-25200_xxxxx.img
 user@linuxpc:~/Atlas$ adb -s 192.168.1.129 pull /sdcard/Download/vbmeta.img
 ```
-6. Connect to ATV device. Remove `su` binary from /system/xbin/ before fastboot by
+6. Connect to ATV device. Copy original `su` from /system/xbin/ to Linux pc for backup in case fastboot failed. Then, remove `su` binary from /system/xbin/ before fastboot by
 ```
+user@linuxpc:~/Atlas$ adb -s 192.168.1.129 pull /system/xbin/su
 user@linuxpc:~/Atlas$ adb -s 192.168.1.129 shell
 eros-p1:/ $ su
 eros-p1:/ # mount -o rw,remount /
