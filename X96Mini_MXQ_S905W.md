@@ -13,14 +13,37 @@ This is for X96 Mini / MXQ S905W Chip Configuration
 1. Flash rom using USB BURNING TOOL (Amlogic_USB_Burning_Tool_v2.2.4)
    - X96 mini : **`Most left`** USB port (white USB port)
    - MXQ : **`Most right`** USB port
-3. Install Magisk with following steps.
-4. Update Magisk to 22.1 in Magisk app. After install, select Open and you will get warning but just continue.
-5. Install 22.1 with direct install. 
-6. Reboot
-7. Update Magisk App to 25.2 in Magisk app
-8. Update Magisk to 25.2 in Magisk app with direct install. 
-9. Reboot
-10. Connect to device and Grant superuser access when pop up on display.
+3. Install Magisk with following steps (copy of HowTo_Magisk_Root.txt in MagiskRoot_setup folder).
+> This version of ATVX has the capability to use Magisk Root via normal boot.
+>  In order to replace the current ROOT with Magisk Root do the following:
+>  1. Copy the TWRP.zip and Magisk file to a memory stick (pref FAT32 formatted)
+>  2. Connect the memory stick to the device after the files were copied
+>  3. Use the power menu to reboot to recovery
+>  4. In the recovery menu, select the "Apply update from EXT" option
+>  5. Select Update from udisk
+>  6. Select the TWRP.zip file to boot into TWRP from the memory stick
+>  7. Swipe to Allow Modifications
+>  8. Select "Install"
+>  9. Select "Select Storage"
+>  10. Choose your Memory Stick (usually called USB OTG in the menu) and click OK
+>  11. Select Magisk.zip
+>  12. Swipe to Confirm Flash
+>  13. Magisk will now remove old Root and install Magisk Root.
+>  14. When the installation is done, select Reboot System to restart device
+>  15. Enjoy Magisk Root :)
+>
+> DEVELOPER NOTES
+> I included Magisk 19.3 as this one allows SafetyNet to pass successfully, eventhough it shows API error on this build when you do the test- it does actually pass. If you want to upgrade to the latest Magisk, and keep SafetyNet to pass, make sure that Magisk 19.3 is always first installed as per instructions abobe and then upgrade to the latest Magisk via the Magisk Manager. 
+> 
+> The latest Magisk Manager might complain about not being able to use or see version 19.x, this is fine, just continue and click on the "install" option next to Magisk. Select "Preserve AVB 2.0/dm-verity" and then next. Under Method select "Direct Install" and then "Let's Go" to start installing the latest version of Magisk. Select Reboot when done installing to finish the setup
+
+5. Update Magisk to 22.1 in Magisk app. After install, select Open and you will get warning but just continue.
+6. Install 22.1 with direct install. 
+7. Reboot
+8. Update Magisk App to 25.2 in Magisk app
+9. Update Magisk to 25.2 in Magisk app with direct install. 
+10. Reboot
+11. Connect to device and Grant superuser access when pop up on display.
 ```
 user@linuxpc:~/Atlas$ adb connect 192.168.1.201
 connected to 192.168.1.201:5555
