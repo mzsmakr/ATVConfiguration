@@ -1,5 +1,5 @@
-# x96 mini h313 chipset
-This is steps for X96 mini h313 chipset 2g/16g. 
+# x96 mini / X96Q h313 chipset
+This is steps for X96 mini h313 and X96Q h313 chipset 2g/16g ATV. 
 
 ## Requirements
 
