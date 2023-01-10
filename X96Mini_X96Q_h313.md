@@ -5,7 +5,7 @@ This is steps for X96 mini h313 and X96Q h313 chipset 2g/16g ATV.
 
 Before you start, you need:
 
-- Linux PC (Windows may work but not tested and there is a reported that windows failed fastboot boot command)
+- Linux PC (Windows may work but not tested and there is a report that windows failed fastboot boot command)
 - Android Platform-tool for `adb`/`fastboot` and installed in your Linux PC.
 - USB-A to USB-A cable for fastboot
 - Keyboard and Mouse
