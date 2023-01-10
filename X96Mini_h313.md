@@ -58,7 +58,7 @@ user@linuxpc:~/Atlas$ adb -s 192.168.1.129 shell "echo 'dd if=/dev/block/by-name
 4. Press Let's go, then you will see
 ```
 - Device platform: armeabi-v7a
-- Instaling: 24.3 (24300)
+- Installing: 25.2 (25200)
 - Copying image to cache
 - Unpacking boot image
 - Checking ramdisk status
@@ -68,7 +68,7 @@ user@linuxpc:~/Atlas$ adb -s 192.168.1.129 shell "echo 'dd if=/dev/block/by-name
 
 ****************************
 Output file is written to
-/storage/emulated/0/Download/magisk_patched-24300_xxxxx.img
+/storage/emulated/0/Download/magisk_patched-25200_xxxxx.img
 ****************************
 - All done!
 ```
@@ -168,7 +168,7 @@ user@linuxpc:~/Atlas$ adb -s 192.168.1.129 push atlas_config.json /data/local/tm
 atlas_config.json: 1 file pushed. 0.0 MB/s (182 bytes in 0.039s)
 ```
 10. Add Denylist to pokemongo and yasnac, and then reboot
-11. Check safetynet with yasnac to make sure basic integrity pass. `CTS profile match` will fail but OK. Magisk 25.2 may pass `CTS profile match`. 
+11. Check safetynet with yasnac to make sure basic integrity pass. `CTS profile match` will fail but it's OK, as long as basic integrity pass, Pokemon Go will run.  
 12. Start Atlas. Superuser Request and Grant. Make sure name/endpoint are correct. And then Start.
 13. Activate the device at atlas dashboard
 
