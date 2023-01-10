@@ -11,8 +11,10 @@ This is for X96 Mini / MXQ S905W Chip Configuration
 ---
 ### Steps
 1. Flash rom using USB BURNING TOOL (Amlogic_USB_Burning_Tool_v2.2.4)
-2. Install Magisk with following steps.
-3. Update Magisk to 22.1 in Magisk app. After install, select Open and you will get warning but just continue.
+   - X96 mini : **`Most left`** USB port (white USB port)
+   - MXQ : **`Most right`** USB port
+3. Install Magisk with following steps.
+4. Update Magisk to 22.1 in Magisk app. After install, select Open and you will get warning but just continue.
 5. Install 22.1 with direct install. 
 6. Reboot
 7. Update Magisk App to 25.2 in Magisk app
