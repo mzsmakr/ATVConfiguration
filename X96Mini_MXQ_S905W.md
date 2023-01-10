@@ -73,3 +73,8 @@ user@linuxpc:~/Atlas$
 19. Start Atlas and check name/endpoint and start.
 
 Done!
+
+## Reference
+- [Working ATVs for Atlas](https://github.com/madBeavis/PimpMyAtv/wiki/Working-ATVs-for-Atlas) by madBeavis
+- [X96 Max Plus 5](https://docs.google.com/document/d/1SdaiJKAs2fJVMGLSI-TdORvwDh_THPAP8nqQbtEluno/edit#heading=h.oelb25v5f8ex) by BoomEX
+- [MXQ S905W](https://docs.google.com/document/d/1PusB45JXq6WyolvezFZgAtQLZN_fPcvJ2FvAbAGihh0/edit) by geekygreek7
