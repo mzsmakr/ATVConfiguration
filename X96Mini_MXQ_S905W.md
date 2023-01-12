@@ -68,8 +68,6 @@ user@linuxpc:~/Atlas$ adb -s 192.168.1.201 push safetynet-fix-v2.3.1.zip /data/l
 safetynet-fix-v2.3.1.zip: 1 file pushed. 0.2 MB/s (95201 bytes in 0.586s)
 user@linuxpc:~/Atlas$ adb -s 192.168.1.201 shell
 atvX:/ $ su
-atvX:/ # cd /data/lo
-local/       log/         lost+found/
 atvX:/ # cd /data/local/tmp/
 atvX:/data/local/tmp # magisk --install-module safetynet-fix-v2.3.1.zip
 - Device is system-as-root
