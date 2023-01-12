@@ -1,5 +1,5 @@
 # X96 Mini S905W / MXQ S905W Configuration
-This is for X96 Mini / MXQ S905W Chip Configuration. ROM flashed in this instruction is Android 10, 32bit mode and wifi available.  
+This is for X96 Mini / MXQ S905W Chip Configuration. ROM flashed in this instruction is Android 9, 32bit mode and wifi available.  
 ## Requirements
 - Windows PC
 - USB BURNING TOOL ([Amlogic_USB_Burning_Tool_v2.2.4](https://androidmtk.com/download-amlogic-usb-burning-tool))
