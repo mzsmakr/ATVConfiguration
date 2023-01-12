@@ -44,8 +44,8 @@ This is for X96 Mini / MXQ S905W Chip Configuration. ROM flashed in this instruc
 > 
 > The latest Magisk Manager might complain about not being able to use or see version 19.x, this is fine, just continue and click on the "install" option next to Magisk. Select "Preserve AVB 2.0/dm-verity" and then next. Under Method select "Direct Install" and then "Let's Go" to start installing the latest version of Magisk. Select Reboot when done installing to finish the setup
 
-5. Update Magisk to 22.1 in Magisk app. When first try to update to install, it will ask to allow install unknow apps and configure to allow always then select Magisk Manager to allow. Try again to update to install. After install, select Open and you will get warning but just continue.
-6. Install 22.1 with direct install. 
+5. Update Magisk to 22.1 in Magisk app. When first try to update to install, it will ask to allow install unknow apps and configure to allow always then select Magisk Manager to allow. Try again to update to install. After install, select Open and you will get warning about Unsupported Magisk Version, but just OK and continue.
+6. Install 22.1. Select "Preserve AVB 2.0/dm-verity" and then next. Then select direct install. 
 7. Reboot
 8. Update Magisk App to 25.2 in Magisk app
 9. Update Magisk to 25.2 in Magisk app with direct install. 
