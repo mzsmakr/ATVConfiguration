@@ -3,7 +3,7 @@ This is for X96 Mini / MXQ S905W Chip Configuration. ROM flashed in this instruc
 ## Requirements
 - Windows PC
 - USB BURNING TOOL ([Amlogic_USB_Burning_Tool_v2.2.4](https://androidmtk.com/download-amlogic-usb-burning-tool))
-- ROM to flash. I use from [atvXperience #884](https://forum.atvxperience.com/viewtopic.php?p=19913#p19913), [NON-SUPPORTED ROM](https://mega.nz/file/025z0KCY#D1b6S_kJn2H6fKvQbQr_epjlRJfnU0euu_0mqQemMAU)
+- ROM to flash. I use from [atvXperience #884](https://forum.atvxperience.com/viewtopic.php?p=19913#p19913), [NON-SUPPORTED ROM](https://mega.nz/file/025z0KCY#D1b6S_kJn2H6fKvQbQr_epjlRJfnU0euu_0mqQemMAU) which has Magisk Root capability.
 - Mouse and Keyboad
 - USB-A to USB-A cable
 - USB Memory to install Magisk
