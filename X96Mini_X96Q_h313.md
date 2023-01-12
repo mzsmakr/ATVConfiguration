@@ -1,5 +1,5 @@
 # X96 mini / X96Q h313 chipset
-This is steps for X96 mini h313 and X96Q h313 chipset 2g/16g ATV. 
+This is steps for X96 mini h313 and X96Q h313 chipset 2g/16g ATV. These devices are Android 11, 32bit mode, wifi available as of 01/11/2023.
 
 ## Requirements
 
@@ -7,19 +7,27 @@ Before you start, you need:
 
 - Linux PC (Windows may work but not tested and there is a report that windows failed fastboot boot command)
 - Android Platform-tool for `adb`/`fastboot` and installed in your Linux PC.
+  - Debian/Ubuntu-based Linux users can type the following command to install ADB:\
+    ```sudo apt-get install android-tools-adb```
+  - Fedora/SUSE-based Linux users can type the following command to install ADB:\
+    ```sudo yum install android-tools```
 - USB-A to USB-A cable for fastboot
 - Keyboard and Mouse
 - Magisk App apk.(I use [Magisk-v25.2.apk](https://github.com/topjohnwu/Magisk/releases/tag/v25.2))
 - Magisk safetynet fix module. (I use [safetynet-fix-v2.3.1.zip](https://github.com/kdrag0n/safetynet-fix/releases/tag/v2.3.1))
-- Optional. YASNAC (short for Yet Another SafetyNet Attestation Checker). (I use [yasnac-v1.1.5.r65.15110ef310-release.apk](https://github.com/RikkaW/YASNAC/releases/tag/v1.1.5))
+- Optional. YASNAC (short for Yet Another SafetyNet Attestation Checker) to check SafetyNet bypass success or not. (I use [yasnac-v1.1.5.r65.15110ef310-release.apk](https://github.com/RikkaW/YASNAC/releases/tag/v1.1.5))
+- All files are saved in `/home/user/Atlas` directory and all commands executed from this directory in this instruction.
 
 
 ---
 ## Steps
 ### Install Magisk App
-1. Connect Kyeboard/Mouse and boot. Then connect to wifi (or ethernet)
+1. Connect Kyeboard/Mouse and boot. Then connect to wifi (or ethernet)\
+   When navigate UI with mouse:\
+   `left click`: select\
+   `right click`: cancel/go back
 2. Configure static IP address in your router if possible
-3. Install Magisk App (24.3) (Example device IP is 192.168.1.129)
+3. Install Magisk App (25.2) (Example device IP is 192.168.1.129)
 ```
 user@linuxpc:~/Atlas$ adb connect 192.168.1.129
 * daemon not running; starting now at tcp:5037
@@ -78,7 +86,7 @@ Output file is written to
 user@linuxpc:~/Atlas$ adb -s 192.168.1.129 pull /sdcard/Download/magisk_patched-25200_xxxxx.img
 user@linuxpc:~/Atlas$ adb -s 192.168.1.129 pull /sdcard/Download/vbmeta.img
 ```
-6. Connect to ATV device. Copy original `su` from /system/xbin/ to Linux pc for backup in case fastboot failed. Then, remove `su` binary from /system/xbin/ before fastboot by
+6. Connect to ATV device. Copy original `su` from `/system/xbin/` to Linux pc for backup in case fastboot failed. Then, remove `su` binary from `/system/xbin/` before fastboot by
 ```
 user@linuxpc:~/Atlas$ adb -s 192.168.1.129 pull /system/xbin/su
 user@linuxpc:~/Atlas$ adb -s 192.168.1.129 shell
@@ -100,7 +108,7 @@ user@linuxpc:~/Atlas$ sudo fastboot devices
 ```
 10. Flash patched boot.img with command:
 ```
-user@linuxpc:~/Atlas$ sudo fastboot flash boot /path-to-img/magisk_patched-24300_xxxxx.img
+user@linuxpc:~/Atlas$ sudo fastboot flash boot magisk_patched-24300_xxxxx.img
 target reported max download size of 33554432 bytes
 sending 'boot' (32768 KB)...
 OKAY [  1.505s]
@@ -110,7 +118,7 @@ finished. total time: 2.110s
 ```
 11. Flash vbmeta.img with command:
 ```
-user@linuxpc:~/Atlas$ sudo fastboot --disable-verity --disable-verification flash vbmeta /path-to-img/vbmeta.img
+user@linuxpc:~/Atlas$ sudo fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img
 target reported max download size of 33554432 bytes
 sending 'vbmeta' (16384 KB)...
 OKAY [  0.759s]
@@ -124,7 +132,7 @@ user@linuxpc:~/Atlas$ sudo fastboot reboot
 ```
 ### Configure Magisk
 1. Remove USB-USB cable and connect Mouse back
-1. Open Magisk App and make sure Magisk 24.3 is installed.
+1. Open Magisk App and make sure Magisk 25.2 is installed.
 2. If asked reboot, reboot.
 3. Grant su permission.
 ```
