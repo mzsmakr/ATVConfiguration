@@ -1,6 +1,7 @@
 # X96 Mini S905W / MXQ S905W Configuration
-This is for X96 Mini / MXQ S905W Chip Configuration 
+This is for X96 Mini / MXQ S905W Chip Configuration. ROM flashed in this instruction is Android 10, 32bit mode and wifi available.  
 ## Requirements
+- Windows PC
 - USB BURNING TOOL ([Amlogic_USB_Burning_Tool_v2.2.4](https://androidmtk.com/download-amlogic-usb-burning-tool))
 - ROM to flash. I use from [atvXperience #884](https://forum.atvxperience.com/viewtopic.php?p=19913#p19913), [NON-SUPPORTED ROM](https://mega.nz/file/025z0KCY#D1b6S_kJn2H6fKvQbQr_epjlRJfnU0euu_0mqQemMAU)
 - Mouse and Keyboad
@@ -13,7 +14,13 @@ This is for X96 Mini / MXQ S905W Chip Configuration
 1. Flash rom using USB BURNING TOOL (Amlogic_USB_Burning_Tool_v2.2.4)
    - X96 mini : **`Most left`** USB port (white USB port)
    - MXQ : **`Most right`** USB port
-3. Install Magisk with following steps (copy of HowTo_Magisk_Root.txt in MagiskRoot_setup folder).
+   1. Import ROM image downloaded.
+   2. Click Start before connecting USB between PC to Device
+   3. I recommand everything (Keyboard, mouse and power cable) is disconnected from device before start. Push button inside `AV` hole. You need very small screw driver to push the button. While pushing the button, connect USB to device. Then burning tool detects the device and starts flashing. You can remove screw driver once flashing started and progress bar is like 4%.
+   4. Once successfully flashed. Push stop button and now you can disconnect USB.
+2. Connect Keyboard, Mouse and Display then plugin power cable.
+3. Connect wifi or ethernet and remember IP address.
+4. Install Magisk with following steps (copy of HowTo_Magisk_Root.txt in MagiskRoot_setup folder).
 > This version of ATVX has the capability to use Magisk Root via normal boot.
 >  In order to replace the current ROOT with Magisk Root do the following:
 >  1. Copy the TWRP.zip and Magisk file to a memory stick (pref FAT32 formatted)
