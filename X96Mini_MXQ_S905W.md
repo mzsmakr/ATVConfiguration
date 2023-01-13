@@ -100,7 +100,7 @@ user@linuxpc:~/Atlas$
 ```
 16. Configure Denylist and add pokemongo and yasnac.
 17. reboot
-18. Open yasnac and check if safetynet pass or not. It should show Basic/CTS profile match both Pass.
+18. Open yasnac and check if safetynet pass or not. It should show `Basic`/`CTS profile match` both Pass.
 19. Start Atlas and check name/endpoint and start.
 
 Done!
