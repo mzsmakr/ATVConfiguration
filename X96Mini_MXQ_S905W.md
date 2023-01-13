@@ -18,6 +18,9 @@ This is for X96 Mini / MXQ S905W Chip Configuration. ROM flashed in this instruc
    2. Click Start before connecting USB between PC to Device
    3. I recommand everything (Keyboard, mouse and power cable) is disconnected from device before start. Push button inside `AV` hole. You need very small screw driver to push the button. While pushing the button, connect USB to device. Then burning tool detects the device and starts flashing. You can remove screw driver once flashing started and progress bar is like 4%.
    4. Once successfully flashed. Push stop button and now you can disconnect USB.
+
+<p align="center"><img src="Images/ATV_Flashing.png" width="500"/></p>
+
 2. Connect Keyboard, Mouse and Display then plugin power cable.
 3. Connect wifi or ethernet and remember IP address.
 4. Install Magisk with following steps (copy of HowTo_Magisk_Root.txt in MagiskRoot_setup folder).
