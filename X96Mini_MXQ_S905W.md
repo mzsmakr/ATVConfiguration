@@ -61,7 +61,7 @@ user@linuxpc:~/Atlas$ adb -s 192.168.1.201 shell
 atvX:/ $ su (after this superuser request should pop up)
 atvX:/ #
 ```
-11. Enable Zygisk and Configure DenyList and add Google Play Service ( need to Show system apps)
+11. Open Magisk App. Go to settings (Gear Icon). Enable Zygisk and Configure DenyList to add Google Play Service (Need to Show system apps by clicking top right `...` )
 12. reboot
 13. Install magisk safetynet-fix module
 ```
