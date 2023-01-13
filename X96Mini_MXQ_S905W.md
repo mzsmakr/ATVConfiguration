@@ -16,7 +16,7 @@ This is for X96 Mini / MXQ S905W Chip Configuration. ROM flashed in this instruc
    - MXQ : **`Most right`** USB port
    1. Import ROM image downloaded.
    2. Click Start before connecting USB between PC to Device
-   3. I recommand everything (Keyboard, mouse and power cable) is disconnected from device before start. Push button inside `AV` hole. You need very small screw driver to push the button. While pushing the button, connect USB to device. Then burning tool detects the device and starts flashing. You can remove screw driver once flashing started and progress bar is like 4%.
+   3. I recommand everything (Keyboard, mouse and power cable) is disconnected from device before start. Push button inside `AV` hole(One type of MXQ has `R` hole between USB). You need very small screw driver to push the button. While pushing the button, connect USB to device. Then burning tool detects the device and starts flashing. You can remove screw driver once flashing started and progress bar is like 4%.
    4. Once successfully flashed. Push stop button and now you can disconnect USB.
 
 <p align="center"><img src="Images/ATV_Flashing.png" width="500"/></p>
