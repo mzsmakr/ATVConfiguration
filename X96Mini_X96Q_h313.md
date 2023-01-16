@@ -108,7 +108,7 @@ user@linuxpc:~/Atlas$ sudo fastboot devices
 ```
 10. Flash patched boot.img with command:
 ```
-user@linuxpc:~/Atlas$ sudo fastboot flash boot magisk_patched-24300_xxxxx.img
+user@linuxpc:~/Atlas$ sudo fastboot flash boot magisk_patched-25200_xxxxx.img
 target reported max download size of 33554432 bytes
 sending 'boot' (32768 KB)...
 OKAY [  1.505s]
