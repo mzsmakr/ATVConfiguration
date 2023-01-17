@@ -1,5 +1,5 @@
 # X96 mini / X96Q h313 chipset
-This is steps for X96 mini h313 and X96Q h313 chipset 2g/16g ATV. These devices are Android 11, 32bit mode, wifi available as of 01/11/2023.
+This is steps for X96 mini h313 and X96Q h313 chipset 2g/16g ATV. These devices are Android 10, 32bit mode, wifi available as of 01/11/2023.
 
 ## Requirements
 
