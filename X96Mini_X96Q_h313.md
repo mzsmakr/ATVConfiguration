@@ -91,7 +91,7 @@ user@linuxpc:~/Atlas$ adb -s 192.168.1.129 pull /sdcard/Download/vbmeta.img
 user@linuxpc:~/Atlas$ adb -s 192.168.1.129 pull /system/xbin/su
 user@linuxpc:~/Atlas$ adb -s 192.168.1.129 shell
 eros-p1:/ $ su
-eros-p1:/ # mount -o rw,remount /
+eros-p1:/ # mount -o remount,rw /
 eros-p1:/ # rm /system/xbin/su
 ```
 7. Connect USB to most left port and Linux USB and reboot with recovery. Most left port is USB-USB, right USB connect keyboard and no Mouse connected. You will need to use Keyboard to get to Fastboot Mode after reboot. 
