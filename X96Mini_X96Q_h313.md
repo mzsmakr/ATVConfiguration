@@ -164,7 +164,7 @@ eros-p1:/ # magisk --install-module safetynet-fix-v2.3.1.zip
 ```
 8. Install pokemongo, Atlas and yasnac (Optional to check Sefetynet Pass check)
 ```
-user@linuxpc:~/Atlas$ adb -s 192.168.1.129 install pokemongo_0.249.2.apk
+user@linuxpc:~/Atlas$ adb -s 192.168.1.129 install pokemongo_0.263.1.armeabi-v7a.apk
 Success
 user@linuxpc:~/Atlas$ adb install PokemodAtlas-Public-v22071801.apk
 Success
