@@ -105,7 +105,13 @@ user@linuxpc:~/Atlas$
 
 Done!
 
-## Reference
+## Warnings
+> If you want to re-flash after installing this rom, then be aware that the usb burn tool might not recognize the device automatically. You need to do adb reboot update in order to flash.</br>
+
+by plinytheelder
+
+## References/Credits
 - [Working ATVs for Atlas](https://github.com/madBeavis/PimpMyAtv/wiki/Working-ATVs-for-Atlas) by madBeavis
 - [X96 Max Plus 5](https://docs.google.com/document/d/1SdaiJKAs2fJVMGLSI-TdORvwDh_THPAP8nqQbtEluno/edit#heading=h.oelb25v5f8ex) by BoomEX
 - [MXQ S905W](https://docs.google.com/document/d/1PusB45JXq6WyolvezFZgAtQLZN_fPcvJ2FvAbAGihh0/edit) by geekygreek7
+- Many useful comments by plinytheelder in Atlas Discord
