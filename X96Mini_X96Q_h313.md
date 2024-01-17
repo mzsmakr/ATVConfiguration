@@ -187,7 +187,7 @@ Done!
 It requires to pass PlayIntegrity for BASIC and DEVICE now. You need to update play store and valid fingerprint to pass **DEVICE** integrity. 
 1. Get play store from apkmirror.com. I use [Google Play Store (Android TV) 38.7.30 universal](https://www.apkmirror.com/apk/google-inc/google-play-store-android-tv/google-play-store-android-tv-38-7-30-release/).
 2. Rename downloaded play store apk to Tubesky.apk
-3. Copy to ATV and replace with current Tubesky.apk. Most likely system disk space was full and you need to remove some apks including current Tubesky.apk to free up some space for play store before copy from /data/local/tmp to /system/priv-app/Tubesky/. I deleted LiveTv.apk and TvSetting.apk in addition to Tubesky.apk. Not sure exactry what these apks for but so far no issue for removing these apks.
+3. Copy to ATV and replace with current Tubesky.apk. Most likely system disk space was full and you need to remove some apks including current Tubesky.apk to free up some space for play store before copy from /data/local/tmp to /system/priv-app/Tubesky/. I deleted LiveTv.apk and DragonAgingTV.apk in addition to Tubesky.apk. Not sure exactry what these apks for but so far no issue for removing these apks.
    ```
    adb -s 192.168.1.129 push Tubesky.apk /data/local/tmp
    adb -s 192.168.1.129 shell
@@ -195,7 +195,7 @@ It requires to pass PlayIntegrity for BASIC and DEVICE now. You need to update p
    mount -o rw,remount /
    rm /system/priv-app/Tubesky/Tubesky.apk
    rm /system/priv-app/LiveTV/LiveTV.apk
-   rm /system/priv-app/TvSetting/TvSetting.apk
+   rm /system/app/DragonAgingTV/DragonAgingTV.apk
    cp Tubesky.apk /system/priv-app/Tubesky.apk
    ```
 5. Download [PlayIntegrityFix.zip](https://github.com/chiteroman/PlayIntegrityFix/releases/tag/v15.1) or [PlayIntegrityFork-v5.zip](https://github.com/osm0sis/PlayIntegrityFork/releases/tag/v5) and install. Both modules won't provide valid fingerprint out of box as of 1/16 and you need to find valid fingerprint yourself.
