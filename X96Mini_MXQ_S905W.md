@@ -134,6 +134,43 @@ user@linuxpc:~/Atlas$
 
 Done!
 
+---
+## Update (1/16/2024)
+It requires to pass PlayIntegrity for BASIC and DEVICE now. You need to update play store and valid fingerprint to pass **DEVICE** integrity. 
+1. Get play store from apkmirror.com. I use [Google Play Store (Android TV) 38.7.30 universal](https://www.apkmirror.com/apk/google-inc/google-play-store-android-tv/google-play-store-android-tv-38-7-30-release/).
+2. Rename downloaded play store apk to Tubesky.apk
+3. Copy to ATV and replace with current Tubesky.apk. Delete Tubesky.apk in /system/priv-app/Tubesky/ and copy from /data/local/tmp/Tubesky.apk.
+   ```
+   adb -s 192.168.1.129 push Tubesky.apk /data/local/tmp
+   adb -s 192.168.1.129 shell
+   su
+   mount -o rw,remount /
+   rm /system/priv-app/Tubesky/Tubesky.apk
+   cp Tubesky.apk /system/priv-app/Tubesky.apk
+   ```
+5. Download [PlayIntegrityFix.zip](https://github.com/chiteroman/PlayIntegrityFix/releases/tag/v15.1) or [PlayIntegrityFork-v5.zip](https://github.com/osm0sis/PlayIntegrityFork/releases/tag/v5) and install. Both modules won't provide valid fingerprint out of box as of 1/16 and you need to find valid fingerprint yourself.
+   ```
+   adb -s 192.168.1.129 push PlayIntegrityFix.zip /data/local/tmp
+   adb -s 192.168.1.129 shell
+   su
+   magisk --install-module PlayIntegrityFix.zip
+   ```
+6. Reboot the ATV
+7. Install Play Integrity Checker like Play Integrity API Checker or Simple Play Integrity Checker but these could be throtted due to too many API call.
+8. Find valid fingerprint
+    - Option 1: Use [Play Integrity Fix Props Collection](https://github.com/TheFreeman193/PIFS) to get a valid fingerprint from collection of fingerprints(These files aren't tested - They're just a sample of device profiles available online). You might be able to find a valid fingerprint if you are luckey. Even you could find good fingerprint, they won't last permanently since many people will use the script and use the same valid fingerprints. To use PIFS correctly, I needed to use older [commit](https://github.com/TheFreeman193/PIFS/tree/3bea229861257ded018769b48b64adcce0d4150e) to properly download profile/fingerprint collection from GitHub.
+    ```
+    adb -s 192.168.1.100 shell
+    cd /data/local/tmp
+    su
+    /data/adb/magisk/busybox wget -O pickaprint.sh "https://raw.githubusercontent.com/TheFreeman193/PIFS/3bea229861257ded018769b48b64adcce0d4150e/pickaprint.sh"
+    chmod 755 ./pickaprint.sh
+    ./pickaprint.sh
+    ```
+    It will download json files and randomly select a fingerprint from collections and ask to check PlayIntegrity. Run PlayIntegrity checker to get result. If it passes both BASIC and DEVICE integrity type `y`, if it passes only BASIC, type `n` and keep going until it passes DEVICE integrity. If you are luckey, you will find a vlid one very quick. Good luck!
+    - Option 2: Get cheap Android phone/tablet and extract fingerprint. [Here is some info how to extract fingerprint from device](https://github.com/chiteroman/PlayIntegrityFix/issues/116).
+
+
 ## Warnings
 > If you want to re-flash after installing this rom, then be aware that the usb burn tool might not recognize the device automatically. You need to do adb reboot update in order to flash.</br>
 
